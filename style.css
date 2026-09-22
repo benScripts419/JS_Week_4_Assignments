@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@500;600&display=swap");
+
+:root {
+  --case: #2a2a2c;
+  --case-edge: #38383b;
+  --screen-bg: #d7e4c7;
+  --screen-text: #24371f;
+  --key-digit: #47474b;
+  --key-digit-text: #f2f2ef;
+  --key-function: #8a8d86;
+  --key-function-text: #232323;
+  --key-operator: #e08a3e;
+  --key-operator-text: #2a1a06;
+  --key-equals: #5c9c5c;
+  --key-equals-text: #0f1f0f;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1c;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  padding: 24px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 340px;
+  background: var(--case);
+  border: 1px solid var(--case-edge);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.screen {
+  background: var(--screen-bg);
+  color: var(--screen-text);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: right;
+  padding: 22px 16px;
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.08s ease,
+    filter 0.08s ease;
+}
+
+.key:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.key:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.key--digit {
+  background: var(--key-digit);
+  color: var(--key-digit-text);
+}
+
+.key--zero {
+  grid-column: span 2;
+}
+
+.key--function {
+  background: var(--key-function);
+  color: var(--key-function-text);
+}
+
+.key--operator {
+  background: var(--key-operator);
+  color: var(--key-operator-text);
+}
+
+.key--equals {
+  background: var(--key-equals);
+  color: var(--key-equals-text);
+}
+
+.key:hover {
+  filter: brightness(1.08);
+}
+
+.key--digit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hint {
+  margin: 14px 2px 2px;
+  color: #a8a8ac;
+  font-size: 0.78rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (max-width: 360px) {
+  .screen {
+    font-size: 1.8rem;
+    padding: 18px 14px;
+  }
+  .key {
+    font-size: 1rem;
+    padding: 14px 0;
+  }
+}
