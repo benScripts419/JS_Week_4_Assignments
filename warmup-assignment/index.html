@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors — Defeat the Evil AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="panel">
+        <header class="panel__header">
+            <h1>Defeat the Evil AI</h1>
+            <p class="subtitle">First to five wins takes the fortress. Choose your move.</p>
+        </header>
+
+        <section class="scoreboard" aria-label="Score">
+            <div class="score">
+                <span class="score__label">You</span>
+                <span class="score__value" id="playerScore">0</span>
+            </div>
+            <div class="score__divider">–</div>
+            <div class="score">
+                <span class="score__label">Evil AI</span>
+                <span class="score__value" id="computerScore">0</span>
+            </div>
+        </section>
+
+        <section class="result" id="result" aria-live="polite">
+            Choose a move to begin the duel.
+        </section>
+
+        <section class="choices" aria-label="Choose your move">
+            <button class="choice" data-choice="Rock">
+                <span class="choice__icon">✊</span>
+                <span class="choice__label">Rock</span>
+            </button>
+            <button class="choice" data-choice="Paper">
+                <span class="choice__icon">✋</span>
+                <span class="choice__label">Paper</span>
+            </button>
+            <button class="choice" data-choice="Scissors">
+                <span class="choice__icon">✌️</span>
+                <span class="choice__label">Scissors</span>
+            </button>
+        </section>
+
+        <button class="reset" id="resetButton">Restart duel</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Archivo+Black&display=swap');
+
+:root {
+    --sand: #f3e2c2;
+    --sand-deep: #e0c58f;
+    --sky-top: #6a3f6b;
+    --sky-bottom: #e8895a;
+    --rock: #4a3728;
+    --ink: #2c231c;
+    --accent: #c9483c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink);
+    font-family: 'Archivo', system-ui, sans-serif;
+    padding: 24px;
+}
+
+.game-wrap {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Archivo Black', 'Archivo', sans-serif;
+    font-size: 1.7rem;
+    color: var(--sand);
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+}
+
+.instructions {
+    color: #c9b9a4;
+    font-size: 0.9rem;
+    margin: 0 0 16px;
+}
+
+kbd {
+    background: #3d3128;
+    color: var(--sand);
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-size: 0.85em;
+    border: 1px solid #55473a;
+}
+
+.stage {
+    position: relative;
+    display: inline-block;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+    line-height: 0;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    background: linear-gradient(var(--sky-top), var(--sky-bottom) 70%, var(--sand-deep) 70%);
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(20, 12, 16, 0.55);
+    color: var(--sand);
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.overlay__title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.5rem;
+}
+
+.overlay__hint {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #e9d9c2;
+}
+
+.hud {
+    margin-top: 14px;
+    color: var(--sand);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}

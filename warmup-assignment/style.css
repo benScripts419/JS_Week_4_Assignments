@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --bg: #0f2a2e;
+    --surface: #163a3f;
+    --surface-raised: #1c454b;
+    --text: #edebe3;
+    --text-muted: #a9c1c2;
+    --amber: #e8a33d;
+    --win: #7fbf6a;
+    --lose: #d9634a;
+    --tie: #8fa6a8;
+    --radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    background-image:
+        radial-gradient(circle at 15% 10%, rgba(232, 163, 61, 0.06), transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(127, 191, 106, 0.05), transparent 45%);
+    color: var(--text);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    padding: 24px;
+}
+
+.panel {
+    width: 100%;
+    max-width: 440px;
+    background: var(--surface);
+    border: 1px solid rgba(237, 235, 227, 0.08);
+    border-radius: 14px;
+    padding: 32px 28px 28px;
+}
+
+.panel__header h1 {
+    margin: 0 0 6px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.subtitle {
+    margin: 0 0 26px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(237, 235, 227, 0.1);
+    border-bottom: 1px solid rgba(237, 235, 227, 0.1);
+    margin-bottom: 20px;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 90px;
+}
+
+.score__label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.score__value {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 2.4rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--amber);
+}
+
+.score__divider {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+}
+
+.result {
+    min-height: 3.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    margin-bottom: 22px;
+    transition: background-color 0.2s ease;
+}
+
+.result--win {
+    background: rgba(127, 191, 106, 0.18);
+}
+
+.result--lose {
+    background: rgba(217, 99, 74, 0.18);
+}
+
+.result--tie {
+    background: rgba(143, 166, 168, 0.18);
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 8px;
+    background: var(--surface-raised);
+    border: 1px solid rgba(237, 235, 227, 0.1);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.choice__icon {
+    font-size: 1.7rem;
+}
+
+.choice:hover:not(:disabled) {
+    border-color: var(--amber);
+    transform: translateY(-2px);
+}
+
+.choice:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+}
+
+.choice:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.reset {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid rgba(237, 235, 227, 0.18);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.12s ease, color 0.12s ease;
+}
+
+.reset:hover {
+    border-color: var(--amber);
+    color: var(--amber);
+}
+
+.reset:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+}
+
+@media (max-width: 380px) {
+    .choice__label {
+        font-size: 0.8rem;
+    }
+
+    .score__value {
+        font-size: 1.9rem;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dune Runner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game-wrap">
+        <h1>Dune Runner</h1>
+        <p class="instructions">Press <kbd>Space</kbd> or <kbd>↑</kbd> to jump over the rocks. Tap the canvas on mobile.
+        </p>
+
+        <div class="stage">
+            <canvas id="gameCanvas" width="640" height="240"></canvas>
+            <div class="overlay" id="overlay">
+                <p class="overlay__title">Dune Runner</p>
+                <p class="overlay__hint">Press Space to start</p>
+            </div>
+        </div>
+
+        <p class="hud">
+            Score: <span id="score">0</span>
+            &nbsp;·&nbsp;
+            Best: <span id="bestScore">0</span>
+        </p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
